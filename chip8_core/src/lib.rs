@@ -1,4 +1,4 @@
-pub const SCREEN_HEIGHT: usize = 32;
+pub const SCREEN_HEIGHT: usize = 32;  //constants should be used for clarity, for numbers that will be used more than once like here we are using them to define computer specs
 pub const SCREEN_WIDTH: usize = 64;
 
 const RAM_SIZE:usize = 4096;
@@ -40,7 +40,7 @@ pub struct Emu {
     st: u8,   
 }
 
-impl Emu {
+impl Emu { //constructor
     pub fn new() -> Self {
         let mut new_emu = Self {
             pc: START_ADDR,
@@ -85,9 +85,40 @@ impl Emu {
 
     pub fn tick(&mut self) {
         let op = self.fetch();
+        self.execute(op);
     }
 
-    fn fetch(&mut self) -> u16 {
+
+    fn fetch(&mut self) -> u16 { //so chip8 reads 1 byte at a time but we need opcode and opperand 
+        let higher_byte = self.ram[self.pc as usize] as u16; //we cast to usize because pointers need to be usize and we cast to u16 so we can combine the 2 bytes
+        let lower_byte = self.ram[(self.pc + 1) as usize] as u16; //pc + 1 becuase we want the next byte 
+        let op = (higher_byte << 8) | lower_byte; // << means bitwise shift e.g  0001 << 4 = 1000 this is so when we do | which is or they basically add together
+        self.pc += 2; // 
+        op
     }
 
+    fn execute(&mut self, op: u16) {
+        let digit1 = (op & 0xF000) >> 12;
+        let digit2 = (op & 0x0F00) >> 8;
+        let digit3 = (op & 0x00F0) >> 4;
+        let digit4 = op & 0x000F;
+
+        match (digit1, digit2, digit3, digit4) {
+            (_, _, _, _) => unimplemented!("Unimplemented opcode: {}", op),
+            (0, 0, 0xE, 0) => {self.screen = [false; SCREEN_WIDTH * SCREEN_HEIGHT];},
+
+        }
+    }
+
+    pub fn tick_timers(&mut self) {
+        if self.dt > 0 {
+            self.dt -= 1;
+        }
+
+        if self.st > 0 {
+            if self.st == 1 {
+            }
+            self.st -= 1;
+        }
+    }
 }
