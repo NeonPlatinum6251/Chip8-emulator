@@ -1,5 +1,5 @@
-   0.013380854s  INFO prepare_target{force=false package_id=chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core) target="chip8_core"}: cargo::core::compiler::fingerprint: fingerprint error for chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("chip8_core", ["lib"], "/home/joseph/Projects/chip8-emulator/chip8_core/src/lib.rs", Edition2024) }
-   0.013398035s  INFO prepare_target{force=false package_id=chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core) target="chip8_core"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/joseph/Projects/chip8-emulator/chip8_core/target/debug/.fingerprint/chip8_core-04e7390a989a8132/lib-chip8_core`
+   0.015220784s  INFO prepare_target{force=false package_id=chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core) target="chip8_core"}: cargo::core::compiler::fingerprint: fingerprint error for chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("chip8_core", ["lib"], "/home/joseph/Projects/chip8-emulator/chip8_core/src/lib.rs", Edition2024) }
+   0.015244181s  INFO prepare_target{force=false package_id=chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core) target="chip8_core"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/joseph/Projects/chip8-emulator/chip8_core/target/debug/.fingerprint/chip8_core-04e7390a989a8132/lib-chip8_core`
 
 Caused by:
     No such file or directory (os error 2)
@@ -22,8 +22,8 @@ Stack backtrace:
   14: <unknown>
   15: __libc_start_main
   16: <unknown>
-   0.014623403s  INFO prepare_target{force=false package_id=chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core) target="chip8_core"}: cargo::core::compiler::fingerprint: fingerprint error for chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("chip8_core", ["lib"], "/home/joseph/Projects/chip8-emulator/chip8_core/src/lib.rs", Edition2024) }
-   0.014636883s  INFO prepare_target{force=false package_id=chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core) target="chip8_core"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/joseph/Projects/chip8-emulator/chip8_core/target/debug/.fingerprint/chip8_core-0901312e13800aca/test-lib-chip8_core`
+   0.016535645s  INFO prepare_target{force=false package_id=chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core) target="chip8_core"}: cargo::core::compiler::fingerprint: fingerprint error for chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("chip8_core", ["lib"], "/home/joseph/Projects/chip8-emulator/chip8_core/src/lib.rs", Edition2024) }
+   0.016549893s  INFO prepare_target{force=false package_id=chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core) target="chip8_core"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/joseph/Projects/chip8-emulator/chip8_core/target/debug/.fingerprint/chip8_core-0901312e13800aca/test-lib-chip8_core`
 
 Caused by:
     No such file or directory (os error 2)
@@ -47,6 +47,6 @@ Stack backtrace:
   15: __libc_start_main
   16: <unknown>
     Checking chip8_core v0.1.0 (/home/joseph/Projects/chip8-emulator/chip8_core)
-error: could not compile `chip8_core` (lib test) due to 1 previous error
-warning: build failed, waiting for other jobs to finish...
 error: could not compile `chip8_core` (lib) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `chip8_core` (lib test) due to 1 previous error
