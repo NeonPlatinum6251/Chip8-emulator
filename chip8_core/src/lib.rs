@@ -110,7 +110,7 @@ impl Emu { //constructor
             (0,0,0xE,0) => self.screen = [false; SCREEN_WIDTH * SCREEN_HEIGHT],
             (0,0,0,0) => return,
             (0,0,0xE,0xE) => { 
-                let ret_addr = self.pop;
+                let ret_addr = self.pop();
                 self.pc = ret_addr;
             },
             (1,_,_,_) => {
