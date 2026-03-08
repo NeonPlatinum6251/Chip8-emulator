@@ -1,5 +1,5 @@
 use rand::random;
-
+-
 pub const SCREEN_HEIGHT: usize = 32;  //constants should be used for clarity, for numbers that will be used more than once like here we are using them to define computer specs
 pub const SCREEN_WIDTH: usize = 64;
 
